@@ -48,6 +48,9 @@
       "type": "registry:component",
       "title": "Branding Logo With Badge",
       "description": "Brand header row with logo slot, title, and badge text.",
+      "registryDependencies": [
+        "badge"
+      ],
       "files": [
         {
           "path": "registry/chris-lally/branding-logo-with-badge/components/branding/logo-with-badge.tsx",

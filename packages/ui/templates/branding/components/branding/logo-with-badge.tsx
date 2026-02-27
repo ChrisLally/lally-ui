@@ -1,4 +1,5 @@
 import { type ReactNode } from "react";
+import { Badge } from "@/components/ui/badge";
 
 export type LogoWithBadgeProps = {
   logo?: ReactNode;
@@ -24,14 +25,12 @@ export function LogoWithBadge({
     <div className={className ?? "flex items-center gap-2"}>
       {logo ? logo : <div aria-hidden className="h-7 w-7 rounded-md bg-neutral-300" />}
       <span className={titleClassName ?? "text-xl font-bold"}>{title}</span>
-      <span
-        className={
-          badgeClassName ??
-          "rounded-md border border-neutral-300 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide"
-        }
+      <Badge
+        variant="outline"
+        className={badgeClassName ?? "text-xs font-semibold uppercase tracking-wide"}
       >
         {badge}
-      </span>
+      </Badge>
     </div>
   );
 }
