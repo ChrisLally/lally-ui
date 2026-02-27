@@ -1,7 +1,7 @@
 {
-  "name": "@chris-lally/ui-cli",
-  "version": "0.1.0-alpha.4",
-  "description": "CLI for @chris-lally/ui-* distribution workflows",
+  "name": "@chris-lally/ui",
+  "version": "0.1.0-alpha.5",
+  "description": "CLI and distribution entrypoint for @chris-lally/ui workflows",
   "repository": {
     "type": "git",
     "url": "https://github.com/ChrisLally/lally-ui"

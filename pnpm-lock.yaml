@@ -18,6 +18,25 @@ importers:
         specifier: 5.9.2
         version: 5.9.2
 
+  packages/ui:
+    dependencies:
+      '@chris-lally/ui-branding':
+        specifier: workspace:*
+        version: link:../ui-branding
+    devDependencies:
+      '@types/node':
+        specifier: ^22.15.3
+        version: 22.15.3
+      ts-node:
+        specifier: ^10.9.2
+        version: 10.9.2(@types/node@22.15.3)(typescript@5.9.2)
+      tsup:
+        specifier: ^8.5.0
+        version: 8.5.1(typescript@5.9.2)
+      typescript:
+        specifier: 5.9.2
+        version: 5.9.2
+
   packages/ui-branding:
     dependencies:
       react:
@@ -39,25 +58,6 @@ importers:
       eslint:
         specifier: ^9.39.1
         version: 9.39.1
-      tsup:
-        specifier: ^8.5.0
-        version: 8.5.1(typescript@5.9.2)
-      typescript:
-        specifier: 5.9.2
-        version: 5.9.2
-
-  packages/ui-cli:
-    dependencies:
-      '@chris-lally/ui-branding':
-        specifier: workspace:*
-        version: link:../ui-branding
-    devDependencies:
-      '@types/node':
-        specifier: ^22.15.3
-        version: 22.15.3
-      ts-node:
-        specifier: ^10.9.2
-        version: 10.9.2(@types/node@22.15.3)(typescript@5.9.2)
       tsup:
         specifier: ^8.5.0
         version: 8.5.1(typescript@5.9.2)

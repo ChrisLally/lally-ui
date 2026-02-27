@@ -10,11 +10,11 @@ permissions:
   id-token: write
 
 jobs:
-  publish-ui-branding:
+  publish-ui:
     permissions:
       contents: read
       id-token: write
     uses: ChrisLally/lally-cli/.github/workflows/release-publish.yml@main
     with:
       tag_prefix: "ui-v"
-      package_dir: "packages/ui-cli"
+      package_dir: "packages/ui"

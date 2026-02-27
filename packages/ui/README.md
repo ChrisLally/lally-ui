@@ -1,11 +1,11 @@
-# @chris-lally/ui-cli
+# @chris-lally/ui
 
-CLI for `@chris-lally/ui-*` distribution and setup workflows.
+CLI and distribution entrypoint for `@chris-lally/ui`.
 
 ## Install
 
 ```bash
-pnpm add -D @chris-lally/ui-cli
+pnpm add -D @chris-lally/ui
 ```
 
 ## Usage
