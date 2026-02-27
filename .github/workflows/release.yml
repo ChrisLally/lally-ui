@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     tags:
-      - "ui-branding-v*"
+      - "ui-v*"
 
 permissions:
   contents: read
@@ -16,5 +16,5 @@ jobs:
       id-token: write
     uses: ChrisLally/lally-cli/.github/workflows/release-publish.yml@main
     with:
-      tag_prefix: "ui-branding-v"
+      tag_prefix: "ui-v"
       package_dir: "packages/ui-branding"
