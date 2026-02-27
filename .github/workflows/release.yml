@@ -6,15 +6,18 @@ on:
       - "ui-v*"
 
 permissions:
-  contents: read
+  contents: write
   id-token: write
+  deployments: write
 
 jobs:
   publish-ui:
     permissions:
-      contents: read
+      contents: write
       id-token: write
+      deployments: write
     uses: ChrisLally/lally-cli/.github/workflows/release-publish.yml@main
     with:
       tag_prefix: "ui-v"
       package_dir: "packages/ui"
+      deployment_environment: "Preview - ui"
