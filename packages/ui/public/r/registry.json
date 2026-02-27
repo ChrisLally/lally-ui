@@ -50,9 +50,9 @@
       "description": "Brand header row with logo slot, title, and badge text.",
       "files": [
         {
-          "path": "registry/chris-lally/branding-logo-with-badge/branding/logo-with-badge.tsx",
+          "path": "registry/chris-lally/branding-logo-with-badge/components/branding/logo-with-badge.tsx",
           "type": "registry:component",
-          "target": "branding/logo-with-badge.tsx"
+          "target": "components/branding/logo-with-badge.tsx"
         }
       ]
     }

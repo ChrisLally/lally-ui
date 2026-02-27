@@ -8,7 +8,7 @@ export const brandingLogoWithBadgeItem: RegistryItem = {
   files: [
     {
       source: "branding/components/branding/logo-with-badge.tsx",
-      target: "branding/logo-with-badge.tsx",
+      target: "components/branding/logo-with-badge.tsx",
     },
   ],
 };
