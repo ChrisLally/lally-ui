@@ -10,6 +10,7 @@ export type RegistryItem = {
   name: string;
   description: string;
   dependencies?: string[];
+  registryDependencies?: string[];
   files: RegistryFile[];
 };
 

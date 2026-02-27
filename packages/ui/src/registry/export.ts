@@ -25,6 +25,7 @@ type ExportedRegistryItem = {
   title: string;
   description: string;
   dependencies?: string[];
+  registryDependencies?: string[];
   files: ExportedRegistryFile[];
 };
 
@@ -91,6 +92,7 @@ export async function exportRegistry(outDir: string): Promise<void> {
     title: string;
     description: string;
     dependencies?: string[];
+    registryDependencies?: string[];
     files: Array<{ path: string; type: ExportedRegistryFile["type"]; target?: string }>;
   }> = [];
 
@@ -105,6 +107,7 @@ export async function exportRegistry(outDir: string): Promise<void> {
       title: titleCase(slug),
       description: item.description,
       dependencies: item.dependencies,
+      registryDependencies: item.registryDependencies,
       files,
     };
 
@@ -116,6 +119,7 @@ export async function exportRegistry(outDir: string): Promise<void> {
       title: titleCase(slug),
       description: item.description,
       dependencies: item.dependencies,
+      registryDependencies: item.registryDependencies,
       files: files.map((file) => ({ path: file.path, type: file.type, target: file.target })),
     });
   }

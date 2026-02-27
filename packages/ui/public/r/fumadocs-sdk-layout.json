@@ -8,6 +8,9 @@
     "fumadocs-ui",
     "json5"
   ],
+  "registryDependencies": [
+    "combobox"
+  ],
   "files": [
     {
       "path": "registry/chris-lally/fumadocs-sdk-layout/sdk-layout/index.ts",

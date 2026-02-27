@@ -6,6 +6,7 @@ export const fumadocsSdkLayoutItem: RegistryItem = {
   name: "sdk-layout",
   description: "Interactive SDK docs layout components for Fumadocs pages.",
   dependencies: ["fumadocs-ui", "json5"],
+  registryDependencies: ["combobox"],
   files: [
     {
       source: "fumadocs/blocks/sdk-layout/index.ts",
