@@ -9,7 +9,7 @@
   ],
   "files": [
     {
-      "path": "registry/chris-lally/branding-logo-with-badge/components/branding/logo-with-badge.tsx",
+      "path": "registry/lally-ui/branding-logo-with-badge/components/branding/logo-with-badge.tsx",
       "content": "import { type ReactNode } from \"react\";\nimport { Badge } from \"@/components/ui/badge\";\n\nexport type LogoWithBadgeProps = {\n  logo?: ReactNode;\n  title: string;\n  badge: string;\n  className?: string;\n  titleClassName?: string;\n  badgeClassName?: string;\n};\n\n/**\n * Generic brand header row with a logo slot, title, and badge text.\n */\nexport function LogoWithBadge({\n  logo,\n  title,\n  badge,\n  className,\n  titleClassName,\n  badgeClassName,\n}: LogoWithBadgeProps) {\n  return (\n    <div className={className ?? \"flex items-center gap-2\"}>\n      {logo ? logo : <div aria-hidden className=\"h-7 w-7 rounded-md bg-neutral-300\" />}\n      <span className={titleClassName ?? \"text-xl font-bold\"}>{title}</span>\n      <Badge\n        variant=\"outline\"\n        className={badgeClassName ?? \"text-xs font-semibold uppercase tracking-wide\"}\n      >\n        {badge}\n      </Badge>\n    </div>\n  );\n}\n",
       "type": "registry:component",
       "target": "components/branding/logo-with-badge.tsx"

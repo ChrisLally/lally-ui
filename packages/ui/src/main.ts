@@ -32,6 +32,7 @@ type ComponentsConfig = {
 };
 
 const DEFAULT_REGISTRY_URL = "https://raw.githubusercontent.com/ChrisLally/lally-ui/main/packages/ui/public/r/{name}.json";
+const REGISTRY_ALIAS = "@lally-ui";
 
 function detectPackageManager(cwd: string): "pnpm" | "yarn" | "bun" | "npm" {
   if (existsSync(resolve(cwd, "pnpm-lock.yaml"))) return "pnpm";
@@ -91,10 +92,10 @@ async function connectRegistry(cwd: string, registryUrl: string): Promise<void> 
   const raw = await readFile(componentsPath, "utf8");
   const parsed = JSON.parse(raw) as ComponentsConfig;
   const registries = parsed.registries ?? {};
-  registries["@chris-lally"] = registryUrl;
+  registries[REGISTRY_ALIAS] = registryUrl;
   parsed.registries = registries;
   await writeFile(componentsPath, `${JSON.stringify(parsed, null, 2)}\n`, "utf8");
-  console.log(`Configured @chris-lally registry in ${componentsPath}`);
+  console.log(`Configured ${REGISTRY_ALIAS} registry in ${componentsPath}`);
 }
 
 async function hasConnectedRegistry(cwd: string): Promise<boolean> {
@@ -102,7 +103,7 @@ async function hasConnectedRegistry(cwd: string): Promise<boolean> {
   if (!existsSync(componentsPath)) return false;
   const raw = await readFile(componentsPath, "utf8");
   const parsed = JSON.parse(raw) as ComponentsConfig;
-  return Boolean(parsed.registries?.["@chris-lally"]);
+  return Boolean(parsed.registries?.[REGISTRY_ALIAS]);
 }
 
 function printHelp() {
@@ -188,13 +189,13 @@ export async function runCli(argv: string[]) {
       return;
     }
     if (!(await hasConnectedRegistry(process.cwd()))) {
-      console.error("Missing @chris-lally registry in components.json.");
+      console.error(`Missing ${REGISTRY_ALIAS} registry in components.json.`);
       console.error(`Run: ${connectCommandHint(process.cwd())}`);
       process.exitCode = 1;
       return;
     }
     const registryItemName = toRegistryItemName(itemEntry.id);
-    const registryRef = `@chris-lally/${registryItemName}`;
+    const registryRef = `${REGISTRY_ALIAS}/${registryItemName}`;
     const exitCode = runShadcnAdd(process.cwd(), registryRef, passthrough);
     if (exitCode !== 0) {
       process.exitCode = exitCode;

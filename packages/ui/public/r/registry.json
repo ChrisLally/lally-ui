@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "chris-lally",
+  "name": "lally-ui",
   "homepage": "https://github.com/ChrisLally/lally-ui",
   "items": [
     {
@@ -17,27 +17,27 @@
       ],
       "files": [
         {
-          "path": "registry/chris-lally/fumadocs-sdk-layout/sdk-layout/index.ts",
+          "path": "registry/lally-ui/fumadocs-sdk-layout/sdk-layout/index.ts",
           "type": "registry:component",
           "target": "sdk-layout/index.ts"
         },
         {
-          "path": "registry/chris-lally/fumadocs-sdk-layout/sdk-layout/types/sdk-function-page-types.ts",
+          "path": "registry/lally-ui/fumadocs-sdk-layout/sdk-layout/types/sdk-function-page-types.ts",
           "type": "registry:lib",
           "target": "sdk-layout/types/sdk-function-page-types.ts"
         },
         {
-          "path": "registry/chris-lally/fumadocs-sdk-layout/sdk-layout/sections/sdk-section.tsx",
+          "path": "registry/lally-ui/fumadocs-sdk-layout/sdk-layout/sections/sdk-section.tsx",
           "type": "registry:component",
           "target": "sdk-layout/sections/sdk-section.tsx"
         },
         {
-          "path": "registry/chris-lally/fumadocs-sdk-layout/sdk-layout/interactive/sdk-function-page-interactive.tsx",
+          "path": "registry/lally-ui/fumadocs-sdk-layout/sdk-layout/interactive/sdk-function-page-interactive.tsx",
           "type": "registry:component",
           "target": "sdk-layout/interactive/sdk-function-page-interactive.tsx"
         },
         {
-          "path": "registry/chris-lally/fumadocs-sdk-layout/mdx/package-manager-tabs.tsx",
+          "path": "registry/lally-ui/fumadocs-sdk-layout/mdx/package-manager-tabs.tsx",
           "type": "registry:component",
           "target": "mdx/package-manager-tabs.tsx"
         }
@@ -53,7 +53,7 @@
       ],
       "files": [
         {
-          "path": "registry/chris-lally/branding-logo-with-badge/components/branding/logo-with-badge.tsx",
+          "path": "registry/lally-ui/branding-logo-with-badge/components/branding/logo-with-badge.tsx",
           "type": "registry:component",
           "target": "components/branding/logo-with-badge.tsx"
         }

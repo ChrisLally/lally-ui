@@ -64,7 +64,7 @@ async function readTemplateContent(templateRoot: string, item: RegistryItem): Pr
     const content = applyImportReplacements(source, replaceImports);
 
     files.push({
-      path: `registry/chris-lally/${slugForItem(item)}/${file.target}`,
+      path: `registry/lally-ui/${slugForItem(item)}/${file.target}`,
       content,
       type: fileTypeForTarget(file.target),
       target: file.target,
@@ -126,7 +126,7 @@ export async function exportRegistry(outDir: string): Promise<void> {
 
   await writeJson(resolve(outDir, "registry.json"), {
     $schema: "https://ui.shadcn.com/schema/registry.json",
-    name: "chris-lally",
+    name: "lally-ui",
     homepage: "https://github.com/ChrisLally/lally-ui",
     items: exportedItems,
   });
