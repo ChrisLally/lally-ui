@@ -12,5 +12,5 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   outDir: "dist",
-  noExternal: ["@chris-lally/ui-branding"],
+  noExternal: [],
 });

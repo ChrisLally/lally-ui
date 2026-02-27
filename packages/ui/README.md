@@ -17,8 +17,14 @@ lally-ui --help
 Current commands:
 
 - `lally-ui init`
-- `lally-ui add <name>`
+- `lally-ui add <namespace/item>`
+- `lally-ui registry export --out public/r`
 - `lally-ui doctor`
+
+Examples:
+
+- `lally-ui add fumadocs/sdk-layout`
+- `lally-ui registry export --out public/r`
 
 ## License
 

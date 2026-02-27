@@ -4,15 +4,13 @@ Monorepo for `@chris-lally` UI packages.
 
 ## Structure
 
-- `packages/ui-branding`: branding-focused UI component package
-- `packages/ui-cli`: `lally-ui` distribution CLI package
+- `packages/ui`: `lally-ui` distribution CLI + registry exporter + templates
 
 ## Quick start
 
 ```bash
 pnpm install
-pnpm --filter @chris-lally/ui-branding run build
-pnpm --filter @chris-lally/ui-cli run build
+pnpm --filter @chris-lally/ui run build
 ```
 
 ## Notes

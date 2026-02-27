@@ -1,0 +1,57 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "chris-lally",
+  "homepage": "https://github.com/ChrisLally/lally-ui",
+  "items": [
+    {
+      "name": "fumadocs-sdk-layout",
+      "type": "registry:component",
+      "title": "Fumadocs Sdk Layout",
+      "description": "Interactive SDK docs layout components for Fumadocs pages.",
+      "dependencies": [
+        "fumadocs-ui",
+        "json5"
+      ],
+      "files": [
+        {
+          "path": "registry/chris-lally/fumadocs-sdk-layout/sdk-layout/index.ts",
+          "type": "registry:component",
+          "target": "sdk-layout/index.ts"
+        },
+        {
+          "path": "registry/chris-lally/fumadocs-sdk-layout/sdk-layout/types/sdk-function-page-types.ts",
+          "type": "registry:lib",
+          "target": "sdk-layout/types/sdk-function-page-types.ts"
+        },
+        {
+          "path": "registry/chris-lally/fumadocs-sdk-layout/sdk-layout/sections/sdk-section.tsx",
+          "type": "registry:component",
+          "target": "sdk-layout/sections/sdk-section.tsx"
+        },
+        {
+          "path": "registry/chris-lally/fumadocs-sdk-layout/sdk-layout/interactive/sdk-function-page-interactive.tsx",
+          "type": "registry:component",
+          "target": "sdk-layout/interactive/sdk-function-page-interactive.tsx"
+        },
+        {
+          "path": "registry/chris-lally/fumadocs-sdk-layout/mdx/package-manager-tabs.tsx",
+          "type": "registry:component",
+          "target": "mdx/package-manager-tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "branding-logo-with-badge",
+      "type": "registry:component",
+      "title": "Branding Logo With Badge",
+      "description": "Brand header row with logo slot, title, and badge text.",
+      "files": [
+        {
+          "path": "registry/chris-lally/branding-logo-with-badge/branding/logo-with-badge.tsx",
+          "type": "registry:component",
+          "target": "branding/logo-with-badge.tsx"
+        }
+      ]
+    }
+  ]
+}
