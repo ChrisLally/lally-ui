@@ -1,6 +1,6 @@
 {
   "name": "@chris-lally/ui-cli",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.4",
   "description": "CLI for @chris-lally/ui-* distribution workflows",
   "repository": {
     "type": "git",
