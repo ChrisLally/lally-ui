@@ -62,6 +62,14 @@ function runShadcnAdd(cwd: string, registryItem: string, extraArgs: string[]): n
   }).status ?? 1;
 }
 
+function connectCommandHint(cwd: string): string {
+  const pm = detectPackageManager(cwd);
+  if (pm === "pnpm") return "pnpm dlx @chris-lally/ui@alpha registry connect";
+  if (pm === "yarn") return "yarn dlx @chris-lally/ui@alpha registry connect";
+  if (pm === "bun") return "bunx @chris-lally/ui@alpha registry connect";
+  return "npx @chris-lally/ui@alpha registry connect";
+}
+
 async function connectRegistry(cwd: string, registryUrl: string): Promise<void> {
   const componentsPath = resolve(cwd, "components.json");
   if (!existsSync(componentsPath)) {
@@ -169,7 +177,7 @@ export async function runCli(argv: string[]) {
     }
     if (!(await hasConnectedRegistry(process.cwd()))) {
       console.error("Missing @chris-lally registry in components.json.");
-      console.error("Run: lally-ui registry connect");
+      console.error(`Run: ${connectCommandHint(process.cwd())}`);
       process.exitCode = 1;
       return;
     }
