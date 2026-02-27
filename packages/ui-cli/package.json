@@ -1,6 +1,6 @@
 {
   "name": "@chris-lally/ui-cli",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "description": "CLI for @chris-lally/ui-* distribution workflows",
   "repository": {
     "type": "git",
@@ -18,13 +18,18 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "rm -rf dist && tsc -p tsconfig.json",
-    "check-types": "tsc --noEmit",
-    "dev": "ts-node src/bin/lally-ui.ts"
+    "build": "pnpm --filter @chris-lally/ui-branding run build && pnpm exec tsup --config tsup.config.ts",
+    "check-types": "pnpm --filter @chris-lally/ui-branding run build && tsc --noEmit",
+    "dev": "ts-node src/bin/lally-ui.ts",
+    "verify:pack": "pnpm run build && npm pack --dry-run"
+  },
+  "dependencies": {
+    "@chris-lally/ui-branding": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.15.3",
     "ts-node": "^10.9.2",
+    "tsup": "^8.5.0",
     "typescript": "5.9.2"
   }
 }

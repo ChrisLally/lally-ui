@@ -1,6 +1,7 @@
 {
   "name": "@chris-lally/ui-branding",
-  "version": "0.1.0-alpha.1",
+  "version": "0.0.0",
+  "private": true,
   "description": "Branding-focused UI components for the lally ecosystem.",
   "repository": {
     "type": "git",
@@ -15,13 +16,15 @@
     "LICENSE"
   ],
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./dist/index.js",
+    "./registry": "./dist/registry.js"
   },
   "scripts": {
-    "build": "rm -rf dist && tsc -p tsconfig.json",
+    "build": "pnpm exec tsup --config tsup.config.ts",
     "lint": "eslint . --max-warnings 0",
     "generate:component": "turbo gen react-component",
     "check-types": "tsc --noEmit",
+    "verify:pack": "pnpm run build && npm pack --dry-run",
     "prepublishOnly": "pnpm run build"
   },
   "devDependencies": {
@@ -29,6 +32,7 @@
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
     "eslint": "^9.39.1",
+    "tsup": "^8.5.0",
     "typescript": "5.9.2"
   },
   "dependencies": {
