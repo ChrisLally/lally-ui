@@ -15,6 +15,18 @@ function parseArgs(argv: string[]): CliArgs {
   return { command, rest };
 }
 
+function extractAddTargetAndArgs(args: string[]): { item: string | null; passthrough: string[] } {
+  let itemIndex = args.findIndex((token) => !token.startsWith("-") && token.includes("/"));
+  if (itemIndex < 0) {
+    itemIndex = args.findIndex((token) => !token.startsWith("-"));
+  }
+  if (itemIndex < 0) return { item: null, passthrough: args };
+
+  const item = args[itemIndex] ?? null;
+  const passthrough = args.filter((_, index) => index !== itemIndex);
+  return { item, passthrough };
+}
+
 type ComponentsConfig = {
   registries?: Record<string, string>;
 };
@@ -140,7 +152,7 @@ export async function runCli(argv: string[]) {
   }
 
   if (command === "add") {
-    const item = rest[0];
+    const { item, passthrough } = extractAddTargetAndArgs(rest);
     if (!item) {
       console.error("Missing component/template name.");
       console.error("Usage: lally-ui add <namespace/item>");
@@ -183,7 +195,7 @@ export async function runCli(argv: string[]) {
     }
     const registryItemName = toRegistryItemName(itemEntry.id);
     const registryRef = `@chris-lally/${registryItemName}`;
-    const exitCode = runShadcnAdd(process.cwd(), registryRef, rest.slice(1));
+    const exitCode = runShadcnAdd(process.cwd(), registryRef, passthrough);
     if (exitCode !== 0) {
       process.exitCode = exitCode;
     }
